@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#081c2a">
+  <meta name="description" content="A focused mobile flashcard deck for a Cloud Engineering internship interview.">
+  <title>SGX Cloud Engineering — Interview Flashcards</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="cards.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <p class="eyebrow">SGX GROUP · CLOUD ENGINEERING</p>
+      <h1>Interview<br><span>flashcards.</span></h1>
+      <p class="intro">A focused hour of recall. Think of your answer before you tap to reveal.</p>
+    </header>
+
+    <main>
+      <section class="progress-panel" aria-label="Study progress">
+        <div class="progress-top">
+          <div><strong id="known-count">0</strong><span>Known</span></div>
+          <div><strong id="review-count">0</strong><span>Review</span></div>
+          <div><strong id="new-count">48</strong><span>New</span></div>
+        </div>
+        <progress id="progress-bar" max="48" value="0" aria-label="Known cards out of 48"></progress>
+        <p id="save-message" class="save-message">Progress saves on this device.</p>
+      </section>
+
+      <section class="study-panel" aria-label="Flashcard study">
+        <div class="mode-picker" role="group" aria-label="Study mode">
+          <button type="button" class="mode active" data-mode="all" aria-pressed="true">All <span id="all-total">48</span></button>
+          <button type="button" class="mode" data-mode="essentials" aria-pressed="false">Essentials <span id="essential-total">16</span></button>
+          <button type="button" class="mode" data-mode="review" aria-pressed="false">Review <span id="review-total">0</span></button>
+        </div>
+
+        <label class="filter-label" for="category-filter">Topic</label>
+        <select id="category-filter" aria-label="Filter cards by topic"></select>
+
+        <p id="card-counter" class="card-counter" aria-live="polite">Card 1 of 48</p>
+        <button id="flashcard" class="flashcard" type="button" aria-label="Reveal answer">
+          <span class="card-topline"><span id="card-category">SGX &amp; role</span><span id="essential-badge" class="essential-badge" hidden>ESSENTIAL</span></span>
+          <span id="card-question" class="card-question"></span>
+          <span id="card-answer" class="card-answer" hidden></span>
+          <span id="flip-hint" class="flip-hint">Tap to reveal answer <span aria-hidden="true">↗</span></span>
+        </button>
+        <div id="empty-state" class="empty-state" hidden>
+          <strong>No cards here yet.</strong>
+          <p>Mark a card “Review” from All or Essentials, or choose another topic.</p>
+        </div>
+
+        <div id="status-actions" class="status-actions" role="group" aria-label="Mark current card">
+          <button id="mark-review" type="button" class="status-button review-button" aria-pressed="false">↻ Review</button>
+          <button id="mark-known" type="button" class="status-button known-button" aria-pressed="false">✓ Known</button>
+        </div>
+        <div class="navigation" role="group" aria-label="Card navigation">
+          <button id="previous" type="button">← Previous</button>
+          <button id="next" type="button">Next →</button>
+        </div>
+      </section>
+
+      <aside class="day-of" aria-label="Day-of checklist">
+        <p class="eyebrow">BEFORE YOU GO</p>
+        <h2>Keep the last review light.</h2>
+        <ul>
+          <li>Check your calendar invitation and RSVP.</li>
+          <li>Bring your ID and allow time for reception.</li>
+          <li>Use real examples; say clearly what you are still learning.</li>
+        </ul>
+      </aside>
+    </main>
+
+    <footer>
+      <button id="reset-progress" type="button" class="reset-button">Reset saved progress</button>
+      <p>Technical reference: <a href="https://careers.sgx.com/job/Singapore-Intern-Cloud-Engineering-%28Spring-2027%2C-Jan-to-Jun%29/1368223666/" target="_blank" rel="noopener noreferrer">SGX role</a> · <a href="https://developer.hashicorp.com/terraform/intro" target="_blank" rel="noopener noreferrer">Terraform</a> · <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html" target="_blank" rel="noopener noreferrer">IAM</a></p>
+    </footer>
+  </div>
+</body>
+</html>
