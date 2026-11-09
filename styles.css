@@ -67,6 +67,8 @@ select { display: block; width: 100%; min-height: 48px; padding: 0 15px; border:
 .navigation { margin-top: 12px; }
 .navigation button { border: 1px solid var(--line); color: var(--text); background: transparent; }
 .navigation button:disabled { color: #779399; opacity: .55; cursor: default; }
+.keyboard-hint { margin: 12px 0 0; color: var(--muted); font-size: .76rem; line-height: 1.5; text-align: center; }
+.keyboard-hint kbd { border: 1px solid var(--line); border-radius: 5px; padding: 2px 5px; color: var(--text); background: var(--panel); font: inherit; }
 .day-of { margin-top: 38px; border-top: 1px solid var(--line); padding-top: 25px; }
 .day-of h2 { font-size: 1.45rem; letter-spacing: -.03em; margin: 0 0 10px; }
 .day-of ul { color: var(--muted); line-height: 1.6; padding-left: 21px; margin: 0; }

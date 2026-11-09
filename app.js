@@ -154,6 +154,19 @@
     elements.flashcard.focus();
   });
 
+  document.addEventListener('keydown', event => {
+    if (event.defaultPrevented || event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+    const target = event.target;
+    if (target instanceof Element &&
+        (target.isContentEditable || target.closest('input, select, textarea, [contenteditable="true"]'))) return;
+
+    if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+      event.preventDefault();
+      const button = event.key === 'ArrowLeft' ? elements.previous : elements.next;
+      if (!button.disabled) button.click();
+    }
+  });
+
   function markCurrent(status) {
     const card = filteredCards()[state.index];
     if (!card) return;
