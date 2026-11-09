@@ -48,7 +48,10 @@ select { display: block; width: 100%; min-height: 48px; padding: 0 15px; border:
 .card-topline { display: flex; justify-content: space-between; align-items: center; gap: 10px; width: 100%; color: var(--accent); font-size: .73rem; font-weight: 800; letter-spacing: .04em; }
 .essential-badge { color: #0b2a26; background: var(--accent); padding: 5px 7px; border-radius: 5px; font-size: .61rem; letter-spacing: .06em; white-space: nowrap; }
 .card-question { display: block; font-size: clamp(1.55rem, 5.3vw, 2.25rem); line-height: 1.18; letter-spacing: -.035em; font-weight: 750; margin: 42px 0 25px; overflow-wrap: anywhere; }
-.card-answer { display: block; color: var(--text); font-size: 1.03rem; line-height: 1.55; white-space: pre-line; margin: -3px 0 22px; overflow-wrap: anywhere; }
+.card-answer { display: block; color: var(--text); font-size: 1.03rem; line-height: 1.5; margin: -3px 0 22px; overflow-wrap: anywhere; }
+.answer-point { display: block; position: relative; padding-left: 1.15em; }
+.answer-point + .answer-point { margin-top: .55em; }
+.answer-point::before { content: '•'; position: absolute; left: 0; }
 .flip-hint { display: block; align-self: flex-start; color: var(--muted); font-size: .8rem; font-weight: 700; margin-top: auto; }
 .flip-hint span { font-size: 1rem; }
 .empty-state { min-height: 250px; border: 1px dashed var(--line); border-radius: 20px; padding: 50px 24px; text-align: center; background: var(--panel); }

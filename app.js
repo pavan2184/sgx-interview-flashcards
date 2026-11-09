@@ -100,7 +100,13 @@
     elements.cardCategory.textContent = categoryNames.get(card.category);
     elements.essentialBadge.hidden = !card.essential;
     elements.cardQuestion.textContent = card.question;
-    elements.cardAnswer.textContent = card.answer;
+    elements.cardAnswer.replaceChildren(...card.answer.map(point => {
+      const item = document.createElement('span');
+      item.className = 'answer-point';
+      item.setAttribute('role', 'listitem');
+      item.textContent = point;
+      return item;
+    }));
     elements.cardAnswer.hidden = !state.revealed;
     elements.flipHint.textContent = state.revealed ? 'Tap to hide answer ↑' : 'Tap to reveal answer ↗';
     elements.flashcard.setAttribute('aria-label', `${state.revealed ? 'Hide' : 'Reveal'} answer: ${card.question}`);
